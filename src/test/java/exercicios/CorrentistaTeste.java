@@ -12,21 +12,19 @@ public class CorrentistaTeste {
 
     @BeforeEach
     public void beforeEach(){
-        c1 = new Correntista();
-        c1.setCodigo(1.0);
-        c1.setNome("Any Gomes");
-        c1.setEmail("any.gomes@outlook.com.br");
-        c1.setTelefone("11987643546");
+        c1 = new Correntista(1.0,"Any Gomes","any.gomes@outlook.com.br","11987643546");
     }
 
     @Test
-    public void criarObjetoCorrentista() {
-        assertNotNull(c1);
+    public void criarObjetoCorrentista() { assertNotNull(c1);
     }
 
     @Test
     public void presencaAtributoCodigo() {
-        assertNotNull(c1.getCodigo());
+        assertEquals(1.0, c1.getCodigo());
+        assertEquals("Any Gomes", c1.getNome());
+        assertEquals("any.gomes@outlook.com.br", c1.getEmail());
+        assertEquals("11987643546", c1.getTelefone());
     }
 
     @Test
@@ -44,10 +42,10 @@ public class CorrentistaTeste {
         assertNotNull(c1.getTelefone());
     }
 
-    @Test
+    /*@Test
     public void metodoSetCodigo() {
         assertEquals(1.0, c1.getCodigo());
-    }
+    }*/
 
     @Test
     public void metodoSetCodigoIncorreto() {
@@ -55,10 +53,10 @@ public class CorrentistaTeste {
         assertEquals("Código tem que ser maior que zero", exception.getMessage());
     }
 
-    @Test
+    /*@Test
     public void metodoSetNome() {
         assertEquals("Any Gomes", c1.getNome());
-    }
+    }*/
 
     @Test
     public void metodoSetNomeIncorreto() {
@@ -66,10 +64,10 @@ public class CorrentistaTeste {
         assertEquals("Nome Inválido", exception.getMessage());
     }
 
-    @Test
+    /*@Test
     public void metodoSetEmail() {
         assertEquals("any.gomes@outlook.com.br", c1.getEmail());
-    }
+    }*/
 
     @Test
     public void metodoSetEmailIncorreto() {
@@ -77,10 +75,10 @@ public class CorrentistaTeste {
         assertEquals("E-mail Inválido", exception.getMessage());
     }
 
-    @Test
+    /*@Test
     public void metodoSetTelefone() {
         assertEquals("11987643546", c1.getTelefone());
-    }
+    }*/
 
     @Test
     public void metodoSetTelefoneIncorreto() {

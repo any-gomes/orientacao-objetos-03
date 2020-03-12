@@ -6,6 +6,13 @@ public class Correntista {
     private String email;
     private String telefone;
 
+    public Correntista(Double codigo, String nome, String email, String telefone) {
+        this.setCodigo(codigo);
+        this.setNome(nome);
+        this.setEmail(email);
+        this.setTelefone(telefone);
+    }
+
     public void setCodigo(Double codigo){
         if (codigo <= 0.0){
             throw new IllegalArgumentException("Código tem que ser maior que zero");
